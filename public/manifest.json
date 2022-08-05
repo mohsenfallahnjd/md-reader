@@ -1,6 +1,18 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "The Markdown reader",
+  "short_name": "MD reader",
+  "description": "The markdown reader base on github url",
+  "scope": ".",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#0000ff",
+  "start_url": ".",
+  "display": "standalone",
+  "dir": "ltr",
+  "lang": "en",
+  "categories": [
+    "markdown"
+  ],
   "icons": [
     {
       "src": "favicon.ico",
@@ -17,9 +29,5 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
