@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "license": "MIT",
+  "author": "Mohsen Fallahnejad",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
