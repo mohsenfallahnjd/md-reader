@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface MarkdownEditorProps {
   onChangeInput: Function
@@ -6,8 +7,9 @@ interface MarkdownEditorProps {
 
 // eslint-disable-next-line require-jsdoc
 export const MarkdownEditor: React.FC<MarkdownEditorProps> = ({ onChangeInput }) => {
+    const { t } = useTranslation('home');
     // eslint-disable-next-line no-unused-vars
-    const [input, setInput] = useState('Hello, **world**!');
+    const [input, setInput] = useState(t('default').toString());
 
     /**
      * Handle input fields
@@ -18,10 +20,9 @@ export const MarkdownEditor: React.FC<MarkdownEditorProps> = ({ onChangeInput })
 
     return (
         <div className="c-markdown-editor">
-            <h3>Input</h3>
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label htmlFor="markdown-content">
-                Enter some markdown
+                { t('input_label') }
             </label>
             <textarea
                 id="markdown-content"

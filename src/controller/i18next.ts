@@ -57,7 +57,7 @@ Object.keys(importedFiles).forEach((section) => {
     
         if (section.includes('modules')) {
             locale = fileName.substring(getPosition(fileName, '/', 3) + 1, getPosition(fileName, '/', 3) + 3);
-            file = fileName.split('/').pop();
+            file = fileName.split('/').pop()?.replace('.js', '').replace('.ts', '');
             if (locales.includes(locale)) {
                 importedMessages[locale][file] = deepmerge(importedMessages[locale][file] || {}, content);
             }
