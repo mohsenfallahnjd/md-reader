@@ -1,7 +1,7 @@
-module.exports = {
+export default {
     name            : 'The Markdown reader',
     short_name      : 'MD reader',
-    description     : 'The markdown reader base on github url',
+    description     : 'The markdown reader with react.js',
     scope           : '.',
     orientation     : 'any',
     background_color: '#ffffff',

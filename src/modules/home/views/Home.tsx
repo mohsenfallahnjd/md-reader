@@ -1,38 +1,35 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useTranslation } from 'react-i18next';
-import logo from '@/assets/images/react.svg';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import '../scss/home.scss';
+import { MarkdownEditor } from '../components/Markdown';
 
 /**
  * Home jsx
  */
 export const Home: React.FC = () => {
-    const { t } = useTranslation(['general']);
+    const [markdown, setMarkdown] = React.useState('Hello, **world**!');
+
+    /**
+     * Handle input fields
+     * 
+     * @param {string} e - textarea input
+     */
+    const onChangeInput: Function = (e: string) => setMarkdown(e);
 
     return (
-        <div className="App">
+        <div className="m-home">
             <Helmet>
                 <title>Home</title>
                 <link rel="canonical" href={ window.location.href } />
             </Helmet>
 
-            <header className="App-header">
-                <img src={ logo } className="App-logo" alt="logo" />
-                <h3>Welcome to React!</h3>
+            <MarkdownEditor onChangeInput={ onChangeInput } />
 
-                <p>{ t('powered_by') }</p>
-
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
+            <h3>Output</h3>
+            {/* eslint-disable-next-line react/no-children-prop */}
+            <ReactMarkdown children={ markdown } remarkPlugins={ [remarkGfm] } />
         </div>
-    
     );
 };

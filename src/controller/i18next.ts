@@ -5,7 +5,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import path from 'path';
+// import path from 'path';
 import { deepmerge } from 'deepmerge-ts';
 import config from './config';
 
@@ -57,7 +57,7 @@ Object.keys(importedFiles).forEach((section) => {
     
         if (section.includes('modules')) {
             locale = fileName.substring(getPosition(fileName, '/', 3) + 1, getPosition(fileName, '/', 3) + 3);
-            file = path.basename(fileName, fileName.includes('.ts') ? '.ts' : '.js');
+            file = fileName.split('/').pop();
             if (locales.includes(locale)) {
                 importedMessages[locale][file] = deepmerge(importedMessages[locale][file] || {}, content);
             }

@@ -1,10 +1,10 @@
 # The Markdown reader
 
-This Markdown reader app, used from [react-markdown](https://www.npmjs.com/package/react-markdown) and you can set a custom github url and read the md files.
+This Markdown reader app, used from [react-markdown](https://www.npmjs.com/package/react-markdown).
 
 ## Getting Started
 
-` TODO: Should be complete after finishing development. `
+You can clone this repo and check files. in `Home` module, i made a MarkdownEditor component that emit textarea value to ReactMarkdown reader and render it 😃.
 
 ## Development
 
