@@ -1,7 +1,7 @@
 import { precacheAndRoute } from 'workbox-precaching';
 
-declare let self: ServiceWorkerGlobalScope;
-self.addEventListener('message', (event) => {
+declare let self: any;
+self.addEventListener('message', (event: { data: { type: string; }; }) => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
         self.skipWaiting();
     }
